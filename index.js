@@ -1,4 +1,5 @@
-let luhn = cardNum => cardNum.split('').reverse()
+let luhn = cardNum => cardNum
+    .split('').reverse()
     .map((digit, index) => index % 2 == 1 ?
         (Number(digit) * 2).toString().length > 1 ?
             Number((Number(digit) * 2).toString()[0]) + Number((Number(digit) * 2).toString()[1])
