@@ -1,5 +1,4 @@
-let luhn = cardNum => cardNum
-    .toString().split('')
+let luhn = cardNum => cardNum.split('')
     .map((digit, index) => index % 2 == 0 ?
         (Number(digit) * 2).toString().length > 1 ?
             Number((Number(digit) * 2).toString()[0]) + Number((Number(digit) * 2).toString()[1])
@@ -13,12 +12,3 @@ let luhn = cardNum => cardNum
     else if (input) alert("Credit card number is INVALID.");
     if (input) validateCard();
 })();
-
-// def luhn_checksum(card_number):
-//     digits = digits_of(card_number)
-//     odd_digits = digits[-1::-2]
-//     even_digits = digits[-2::-2]
-//     total = sum(odd_digits)
-//     for digit in even_digits:
-//         total += sum(digits_of(2 * digit))
-//     return total % 10
