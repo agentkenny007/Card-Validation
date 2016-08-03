@@ -1,5 +1,5 @@
-let luhn = cardNum => cardNum.split('')
-    .map((digit, index) => index % 2 == 0 ?
+let luhn = cardNum => cardNum.split('').reverse()
+    .map((digit, index) => index % 2 == 1 ?
         (Number(digit) * 2).toString().length > 1 ?
             Number((Number(digit) * 2).toString()[0]) + Number((Number(digit) * 2).toString()[1])
             : Number(digit) * 2
@@ -8,7 +8,7 @@ let luhn = cardNum => cardNum.split('')
 
 (function validateCard(){
     let input = prompt("Please enter a credit card number to verify.");
-    if (input && input.length == 16 && luhn(input)) alert("Credit card number is VALID.");
+    if (input && (input.length == 16 || input.length == 15) && luhn(input)) alert("Credit card number is VALID.");
     else if (input) alert("Credit card number is INVALID.");
     if (input) validateCard();
 })();
