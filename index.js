@@ -9,7 +9,7 @@ let luhn = cardNum => cardNum && typeof cardNum === 'string' && Number(cardNum.r
 
 (function validateCard(){
     let input = prompt("Please enter a credit card number to verify.");
-    if (input && (input.length == 16 || input.length == 15) && luhn(input)) alert("Credit card number is VALID.");
+    if (input && luhn(input)) alert("Credit card number is VALID.");
     else if (input) alert("Credit card number is INVALID.");
     if (input) validateCard();
 })();
